@@ -5,15 +5,15 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 export default function EditUser() {
   let navigate = useNavigate();
 
-  const { id } = useParams();
+const { id } = useParams();
 
   const [user, setUser] = useState({
     name: "",
-    username: "",
+    userName: "",
     email: "",
   });
 
-  const { name, username, email } = user;
+  const { name, userName, email } = user;
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -30,9 +30,9 @@ export default function EditUser() {
   };
 
   const loadUser = async () => {
-    const result = await axios.get(`http://localhost:8080/user/${id}`)
-    setUser(result.data)
-  };
+    const result = await axios.get(`http://localhost:8080/user/${id}`);
+    setUser(result.data);
+  }
 
   return (
     <div className="container">
@@ -55,15 +55,15 @@ export default function EditUser() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="Username" className="form-label">
+              <label htmlFor="UserName" className="form-label">
                 Username
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your username"
-                name="username"
-                value={username}
+                name="userName"
+                value={userName}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
