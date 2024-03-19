@@ -35,7 +35,7 @@ export default function ViewUser() {
                   {user.name}
                 </li>
                 <li className="list-group-item">
-                  <b>UserName: </b>
+                  <b>User Name: </b>
                   {user.userName}
                 </li>
                 <li className="list-group-item">
